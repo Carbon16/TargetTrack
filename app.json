@@ -1,7 +1,7 @@
 {
   "expo": {
     "experiments": {
-      "baseUrl": "/expo-gh-pages"
+      "baseUrl": "/targettrack"
     },
     "name": "ECshoot-native",
     "slug": "ECshoot-native",
