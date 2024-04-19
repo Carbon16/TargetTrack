@@ -1,5 +1,8 @@
 {
   "expo": {
+    "experiments": {
+      "baseUrl": "/expo-gh-pages"
+    },
     "name": "ECshoot-native",
     "slug": "ECshoot-native",
     "version": "1.0.0",
