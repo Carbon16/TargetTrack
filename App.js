@@ -45,7 +45,7 @@ async function get(key) {
 function Home() {
   return (
     <View>
-      
+      <Text>Hello</Text>
     </View>
   );
 }
