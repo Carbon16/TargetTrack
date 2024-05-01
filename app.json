@@ -1,8 +1,5 @@
 {
   "expo": {
-    "experiments": {
-      "baseUrl": "/targettrack"
-    },
     "name": "ECshoot-native",
     "slug": "ECshoot-native",
     "version": "1.0.0",
