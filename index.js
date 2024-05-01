@@ -2,6 +2,7 @@ const mariadb = require('mariadb');
 const express = require('express');
 const app = express();
 const port = 8080;
+const path = require('path');
 
 const pool = mariadb.createPool({
     host: '127.0.0.1', 
@@ -19,7 +20,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', (req, res) => {
-    res.redirect('http://localhost:8081');
+    res.sendFile(path.join(__dirname + '/dist/index.html'));
 });
 
 app.get('/add/:name/:score/:V/:coach/:distance/:toCount', async (req, res) => {

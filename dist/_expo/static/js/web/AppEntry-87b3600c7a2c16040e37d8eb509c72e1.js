@@ -1,39 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>ECshoot-native</title>
-    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
-    <style id="expo-reset">
-      /* These styles make the body full-height */
-      html,
-      body {
-        height: 100%;
-      }
-      /* These styles disable body scrolling if you are using <ScrollView> */
-      body {
-        overflow: hidden;
-      }
-      /* These styles make the root element full-height */
-      #root {
-        display: flex;
-        height: 100%;
-        flex: 1;
-      }
-    </style>
-  <link rel="shortcut icon" href="/favicon.ico" /></head>
-
-  <body>
-    <!-- Use static rendering with Expo Router to support running without JavaScript. -->
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <!-- The root element for your Expo app. -->
-    <div id="root"></div>
-  <script>
-    var __BUNDLE_START_TIME__=this.nativePerformanceNow?nativePerformanceNow():Date.now(),__DEV__=false,process=this.process||{},__METRO_GLOBAL_PREFIX__='';process.env=process.env||{};process.env.NODE_ENV=process.env.NODE_ENV||"production";
+var __BUNDLE_START_TIME__=this.nativePerformanceNow?nativePerformanceNow():Date.now(),__DEV__=false,process=this.process||{},__METRO_GLOBAL_PREFIX__='';process.env=process.env||{};process.env.NODE_ENV=process.env.NODE_ENV||"production";
 !(function(r){"use strict";r.__r=i,r[`${__METRO_GLOBAL_PREFIX__}__d`]=function(r,n,o){if(null!=e[n])return;var i={dependencyMap:o,factory:r,hasError:!1,importedAll:t,importedDefault:t,isInitialized:!1,publicModule:{exports:{}}};e[n]=i},r.__c=o,r.__registerSegment=function(r,t,n){s[r]=t,n&&n.forEach((function(t){e[t]||v.has(t)||v.set(t,r)}))};var e=o(),t={},n={}.hasOwnProperty;function o(){return e=Object.create(null)}function i(r){var t=r,n=e[t];return n&&n.isInitialized?n.publicModule.exports:d(t,n)}function l(r){var n=r;if(e[n]&&e[n].importedDefault!==t)return e[n].importedDefault;var o=i(n),l=o&&o.__esModule?o.default:o;return e[n].importedDefault=l}function a(r){var o=r;if(e[o]&&e[o].importedAll!==t)return e[o].importedAll;var l,a=i(o);if(a&&a.__esModule)l=a;else{if(l={},a)for(var u in a)n.call(a,u)&&(l[u]=a[u]);l.default=a}return e[o].importedAll=l}i.importDefault=l,i.importAll=a,i.context=function(){throw new Error("The experimental Metro feature `require.context` is not enabled in your project.")},i.resolveWeak=function(){throw new Error("require.resolveWeak cannot be called dynamically.")};var u=!1;function d(e,t){if(!u&&r.ErrorUtils){var n;u=!0;try{n=h(e,t)}catch(e){r.ErrorUtils.reportFatalError(e)}return u=!1,n}return h(e,t)}var c=16,f=65535;function p(r){return{segmentId:r>>>c,localId:r&f}}i.unpackModuleId=p,i.packModuleId=function(r){return(r.segmentId<<c)+r.localId};var s=[],v=new Map;function h(t,n){if(!n&&s.length>0){var o,u=null!=(o=v.get(t))?o:0,d=s[u];null!=d&&(d(t),n=e[t],v.delete(t))}var c=r.nativeRequire;if(!n&&c){var f=p(t),h=f.segmentId;c(f.localId,h),n=e[t]}if(!n)throw Error('Requiring unknown module "'+t+'".');if(n.hasError)throw n.error;n.isInitialized=!0;var _=n,m=_.factory,y=_.dependencyMap;try{var w=n.publicModule;return w.id=t,m(r,i,l,a,w,w.exports,y),n.factory=void 0,n.dependencyMap=void 0,w.exports}catch(r){throw n.hasError=!0,n.error=r,n.isInitialized=!1,n.publicModule.exports=void 0,r}}})('undefined'!=typeof globalThis?globalThis:'undefined'!=typeof global?global:'undefined'!=typeof window?window:this);
 !(function(e){e.$$require_external="undefined"==typeof window?require:function(){return null}})('undefined'!=typeof globalThis?globalThis:'undefined'!=typeof global?global:'undefined'!=typeof window?window:this);
 __d((function(g,r,i,a,m,e,d){var f=r(d[0]),t=f(r(d[1])),u=f(r(d[2]));(0,t.default)(u.default)}),0,[1,2,92]);
@@ -910,6 +875,3 @@ __d((function(_g,r,i,_a,_m,_e,_d){
    */
 'use strict';var e=r(_d[0]),o=Symbol.for("react.element"),t=Symbol.for("react.fragment"),n=Object.prototype.hasOwnProperty,_=e.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,f={key:!0,ref:!0,__self:!0,__source:!0};function a(e,t,a){var l,s={},u=null,y=null;for(l in void 0!==a&&(u=""+a),void 0!==t.key&&(u=""+t.key),void 0!==t.ref&&(y=t.ref),t)n.call(t,l)&&!f.hasOwnProperty(l)&&(s[l]=t[l]);if(e&&e.defaultProps)for(l in t=e.defaultProps)void 0===s[l]&&(s[l]=t[l]);return{$$typeof:o,type:e,key:u,ref:y,props:s,_owner:_.current}}_e.Fragment=t,_e.jsx=a,_e.jsxs=a}),801,[16]);
 __r(0);
-  </script>
-</body>
-</html>
