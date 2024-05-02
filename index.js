@@ -23,6 +23,14 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/dist/index.html'));
 });
 
+app.get('/_expo/static/js/web/AppEntry-cf7b11d9ccd4a98df0218cb7c663311b.js', (req, res) => {
+    res.sendFile(path.join(__dirname + '/dist/_expo/static/js/web/AppEntry-cf7b11d9ccd4a98df0218cb7c663311b.js'));
+});
+
+app.get('/assets/node_modules/@react-navigation/drawer/lib/module/views/assets/toggle-drawer-icon.ae74bb20586a731af545e6b00fe14a09.png', (req, res) => {
+    res.sendFile(path.join(__dirname + '/dist/assets/node_modules/@react-navigation/drawer/lib/module/views/assets/toggle-drawer-icon.ae74bb20586a731af545e6b00fe14a09.png'));
+});
+
 app.get('/add/:name/:score/:V/:coach/:distance/:toCount', async (req, res) => {
     let conn;
     try {
