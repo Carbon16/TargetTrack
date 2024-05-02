@@ -42,27 +42,19 @@ const users = [
   {title: 'A Jallot'}
 ]
 
-function Home() {
+function Home({navigation}) {
   return (
-    <View>
-      <Text>Hello</Text>
-    </View>
-  );
-}
-
-function Score({navigation}) {
-  return (
-    <SafeAreaView >
+    <SafeAreaView style={{flex: 1}}>
       <FlatList
         data={users}
-        style={{flexGrow: 1}}
+        style={{flexGrow: 1, flexDirection: 'column', flex: 1, width: '100%'}}
         renderItem={({item}) => <Pressable onPress={() => navigation.navigate('Entry', {name: item.title})} style={styles.item}><Text>{item.title}</Text></Pressable>}>
       </FlatList>
     </SafeAreaView>
   );
 }
 
-function Entry({route}) {
+function Entry({route, navigation}) {
   const {name} = route.params;
   const [score, setScore] = useState('')
   const [V, setV] = useState('')
@@ -75,16 +67,15 @@ function Entry({route}) {
   async function dispatch(){
     let response;
     if (A == 'NULL' || B == 'NULL'){
-      response = await fetch(`http://172.20.10.4:8080/add/${name}/${score}/${V}/${selectedName}/${distance}/${toCount}`);
+      response = await fetch(`https://lgsk.tech/add/${name}/${score}/${V}/${selectedName}/${distance}/${toCount}`);
     } else {
-      response = await fetch(`http://172.20.10.4:8080/add/${name}/${score}/${V}/${selectedName}/${distance}/${toCount}/${A}/${B}`);
+      response = await fetch(`https://lgsk.tech/add/${name}/${score}/${V}/${selectedName}/${distance}/${toCount}/${A}/${B}`);
     }
-  
     if (response.status === 201) {
-      Alert.alert('Success', 'Data submitted successfully'); // Show success alert
-      navigation.navigate('Score'); // Navigate to Entry screen
+      Alert.alert('Success, Data submitted successfully'); // Show success alert
+      navigation.navigate('Home'); // Navigate to Entry screen
     } else {
-      Alert.alert('Error', 'Something went wrong'); // Show error alert
+      Alert.alert('Error, Something went wrong'); // Show error alert
     }
   }
 
@@ -99,8 +90,8 @@ function Entry({route}) {
       <Picker 
         selectedValue={selectedName}
         onValueChange={(itemValue, itemIndex) => setSelectedName(itemValue)}
-        style={{height: 150}}
-        itemStyle={{height: 150}}
+        style={{height: 50}}
+        itemStyle={{height: 50}}
       >
         <Picker.Item style={styles.pickerItem} label="Self" value="Self" />
         <Picker.Item style={styles.pickerItem} label="LG Skingley" value="LG Skingley" />
@@ -128,8 +119,8 @@ function Entry({route}) {
       <Picker
         selectedValue={distance}
         onValueChange={(itemValue, itemIndex) => setDistance(itemValue)}
-        style={{height: 150}}
-        itemStyle={{height: 150}}
+        style={{height: 50}}
+        itemStyle={{height: 50}}
       >
         <Picker.Item style={styles.pickerItem} label="200" value="200" />
         <Picker.Item style={styles.pickerItem} label="300" value="300" />
@@ -144,8 +135,8 @@ function Entry({route}) {
       <Picker
         selectedValue={toCount}
         onValueChange={(itemValue, itemIndex) => settoCount(itemValue)}
-        style={{height: 150}}
-        itemStyle={{height: 150}}
+        style={{height: 50}}
+        itemStyle={{height: 50}}
       >
         <Picker.Item style={styles.pickerItem} label="7" value="7" />
         <Picker.Item style={styles.pickerItem} label="10" value="10" />
@@ -157,8 +148,8 @@ function Entry({route}) {
       <Picker
         selectedValue={A}
         onValueChange={(itemValue, itemIndex) => setA(itemValue)}
-        style={{height: 150}}
-        itemStyle={{height: 150}}
+        style={{height: 50}}
+        itemStyle={{height: 50}}
 
       >
         <Picker.Item style={styles.pickerItem} label="?" value="NULL" />
@@ -176,8 +167,8 @@ function Entry({route}) {
       <Picker 
         selectedValue={B}
         onValueChange={(itemValue, itemIndex) => setB(itemValue)}
-        style={{height: 150}}
-        itemStyle={{height: 150}}
+        style={{height: 50}}
+        itemStyle={{height: 50}}
       >
         <Picker.Item style={styles.pickerItem} label="?" value="NULL" />
         <Picker.Item style={styles.pickerItem} label="V" value="V" />
@@ -200,7 +191,6 @@ export default function App() {
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen name="Home" component={Home} />
-        <Drawer.Screen name="Score" component={Score} />
         <Drawer.Screen name="Entry" component={Entry} />
       </Drawer.Navigator>
     </NavigationContainer>
@@ -252,10 +242,11 @@ const styles = StyleSheet.create({
       borderColor: 'black',
       borderRadius: 5,
       padding: 10,
-      marginBottom: 20,
+      marginBottom: 10,
     },
     pickerText: {
       marginBottom: 10,
+      fontSize: 18,
     },
     pickerItem: {
       padding: 10,
